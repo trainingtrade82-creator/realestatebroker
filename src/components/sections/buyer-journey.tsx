@@ -50,7 +50,7 @@ export default function BuyerJourney() {
                         </CardHeader>
                     </Card>
                      {index < journeySteps.length - 1 && (
-                        <ChevronRight className="absolute top-1/2 -right-4 h-8 w-8 text-muted-foreground hidden lg:block -translate-y-1/2" />
+                        <ChevronRight className="absolute top-1/2 h-8 w-8 text-muted-foreground hidden lg:block -translate-y-1/2 -right-4" />
                     )}
                 </div>
             ))}
