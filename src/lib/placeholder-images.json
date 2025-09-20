@@ -41,6 +41,30 @@
       "description": "A cozy and modern mountain cabin in the woods.",
       "imageUrl": "https://picsum.photos/seed/p6/600/400",
       "imageHint": "mountain cabin"
+    },
+    {
+        "id": "testimonial-1",
+        "description": "A professional portrait of a man in a business suit.",
+        "imageUrl": "https://picsum.photos/seed/t1/100/100",
+        "imageHint": "professional man"
+    },
+    {
+        "id": "testimonial-2",
+        "description": "A professional portrait of a woman in an office setting.",
+        "imageUrl": "https://picsum.photos/seed/t2/100/100",
+        "imageHint": "professional woman"
+    },
+    {
+        "id": "testimonial-3",
+        "description": "A modern, abstract logo for a development company.",
+        "imageUrl": "https://picsum.photos/seed/t3/100/100",
+        "imageHint": "company logo"
+    },
+    {
+        "id": "testimonial-4",
+        "description": "A portrait of a man with a blurred background of a city.",
+        "imageUrl": "https://picsum.photos/seed/t4/100/100",
+        "imageHint": "man city"
     }
   ]
 }

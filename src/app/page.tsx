@@ -7,6 +7,7 @@ import LifestyleServices from '@/components/sections/lifestyle-services';
 import Footer from '@/components/layout/footer';
 import AiRecommendations from '@/components/sections/ai-recommendations';
 import BuyerJourney from '@/components/sections/buyer-journey';
+import Testimonials from '@/components/sections/testimonials';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <FeaturedProperties />
         <LifestyleServices />
         <BuyerJourney />
+        <Testimonials />
         <AiRecommendations />
         <VipInvitation />
       </main>
