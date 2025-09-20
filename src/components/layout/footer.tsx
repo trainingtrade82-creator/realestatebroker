@@ -5,10 +5,10 @@ import { Twitter, Linkedin, Facebook } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="bg-secondary">
-      <div className="container py-8">
+      <div className="container py-8 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="flex items-center space-x-2">
-            <Image src="/lo.png" alt="Sterling & Landis logo" width={180} height={40} />
+            <Image src="/lo.png" alt="Sterling & Landis logo" width={140} height={35} />
           </div>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Sterling & Landis. All rights reserved.

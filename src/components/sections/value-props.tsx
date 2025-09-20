@@ -27,7 +27,7 @@ const valueProps = [
 export default function ValueProps() {
   return (
     <section id="about" className="py-16 sm:py-24 bg-secondary">
-      <div className="container">
+      <div className="container px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {valueProps.map((prop) => (
             <Card key={prop.title} className="text-center border-0 bg-transparent shadow-none">

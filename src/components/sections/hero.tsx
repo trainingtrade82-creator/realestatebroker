@@ -18,7 +18,7 @@ export default function Hero() {
         />
       )}
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 container mx-auto text-center animate-fade-in-up">
+      <div className="relative z-10 container mx-auto text-center animate-fade-in-up px-4 sm:px-6 lg:px-8">
         <h1 className="font-headline text-4xl md:text-6xl font-bold tracking-tight text-white">
           Access Global Real Estate, Redefined.
         </h1>

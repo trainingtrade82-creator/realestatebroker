@@ -29,7 +29,7 @@ export default function FeaturedProperties() {
 
   return (
     <section id="properties" className="py-16 sm:py-24 bg-background">
-      <div className="container">
+      <div className="container px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl md:text-4xl font-bold">Featured Properties</h2>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground text-lg">

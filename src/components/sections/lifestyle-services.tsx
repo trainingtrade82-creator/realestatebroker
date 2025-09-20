@@ -27,7 +27,7 @@ const services = [
 export default function LifestyleServices() {
   return (
     <section id="services" className="py-16 sm:py-24 bg-background">
-      <div className="container">
+      <div className="container px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl md:text-4xl font-bold">Unparalleled Lifestyle Services</h2>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground text-lg">

@@ -56,7 +56,7 @@ export default function AiRecommendations() {
 
   return (
     <section id="contact" className="py-16 sm:py-24 bg-secondary">
-      <div className="container">
+      <div className="container px-4 sm:px-6 lg:px-8">
         <Card className="max-w-3xl mx-auto">
           <CardHeader className="text-center">
              <div className="mx-auto bg-primary text-primary-foreground rounded-full p-3 w-fit mb-4">
