@@ -1,25 +1,24 @@
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 
 export default function VipInvitation() {
   return (
     <section 
       id="vip" 
-      className="relative py-16 sm:py-24 bg-primary text-primary-foreground overflow-hidden"
+      className="relative py-16 sm:py-24 bg-secondary text-secondary-foreground overflow-hidden"
     >
       <div 
-        className="absolute inset-0 bg-repeat bg-center opacity-5"
+        className="absolute inset-0 bg-repeat bg-center opacity-[0.02]"
         style={{ backgroundImage: 'url(/lo.png)', backgroundSize: '100px 100px' }}
       ></div>
-       <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary to-primary/80"></div>
+       <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary to-secondary/80"></div>
 
       <div className="container text-center relative z-10">
-        <h2 className="font-headline text-3xl md:text-4xl font-bold text-accent">Join the Inner Circle</h2>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
+        <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Join the Inner Circle</h2>
+        <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
           Become a VIP buyer for exclusive access to off-market properties, priority viewings, and a world of luxury perks. Membership is by invitation only.
         </p>
         <div className="mt-8">
-            <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+            <Button size="lg">
                 Request Invitation
             </Button>
         </div>
