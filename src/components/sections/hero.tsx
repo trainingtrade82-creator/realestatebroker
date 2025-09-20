@@ -30,7 +30,7 @@ export default function Hero() {
             <a href="#properties">Explore Properties</a>
           </Button>
           <Button size="lg" variant="secondary" asChild>
-             <a href="#vip">Join VIP Buyers</a>
+             <a href="#vip">Signup</a>
           </Button>
         </div>
       </div>

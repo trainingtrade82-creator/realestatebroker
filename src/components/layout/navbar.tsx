@@ -162,7 +162,7 @@ export default function Navbar() {
       <div className="container flex h-16 items-center">
         <div className="flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/lo.png" alt="Sterling & Landis logo" width={160} height={40} />
+            <Image src="/lo.png" alt="Sterling & Landis logo" width={160} height={40} className="w-40 h-10" />
           </Link>
         </div>
 
@@ -172,7 +172,7 @@ export default function Navbar() {
 
         <div className="flex flex-1 items-center justify-end space-x-2">
            <Button className="hidden md:inline-flex" variant="ghost">Contact</Button>
-           <Button className="hidden md:inline-flex">VIP Login</Button>
+           <Button className="hidden md:inline-flex">Signup</Button>
 
           <Sheet open={isMenuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
@@ -197,7 +197,7 @@ export default function Navbar() {
                 </div>
                  <div className="mt-auto p-4 border-t grid grid-cols-2 gap-2">
                     <Button variant="ghost" className="w-full">Contact</Button>
-                    <Button className="w-full">VIP / Members Login</Button>
+                    <Button className="w-full">Signup</Button>
                  </div>
               </div>
             </SheetContent>
