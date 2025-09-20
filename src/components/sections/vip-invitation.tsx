@@ -19,7 +19,7 @@ export default function VipInvitation() {
         </p>
         <div className="mt-8">
             <Button size="lg">
-                Request Invitation
+                Signup
             </Button>
         </div>
       </div>
