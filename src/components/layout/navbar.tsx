@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -78,20 +78,6 @@ const navLinks = [
 
 function NavMenu({ closeMenu }: { closeMenu?: () => void }) {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const handleMouseEnter = (label: string) => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setOpenMenu(label);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setOpenMenu(null);
-    }, 200);
-  };
 
   return (
     <>
@@ -99,14 +85,12 @@ function NavMenu({ closeMenu }: { closeMenu?: () => void }) {
         link.submenu ? (
           <DropdownMenu key={link.label} open={openMenu === link.label} onOpenChange={(isOpen) => setOpenMenu(isOpen ? link.label : null)}>
             <DropdownMenuTrigger asChild>
-              <div onMouseEnter={() => handleMouseEnter(link.label)} onMouseLeave={handleMouseLeave}>
-                <Button variant="ghost" className="flex items-center gap-1 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground">
+                <Button variant="ghost" className="flex items-center gap-1 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground" onMouseEnter={() => setOpenMenu(link.label)}>
                   {link.label}
                   <ChevronDown className="h-4 w-4" />
                 </Button>
-              </div>
             </DropdownMenuTrigger>
-            <DropdownMenuContent onMouseEnter={() => handleMouseEnter(link.label)} onMouseLeave={handleMouseLeave}>
+            <DropdownMenuContent onMouseLeave={() => setOpenMenu(null)}>
               {link.submenu.map((sublink) => (
                 <DropdownMenuItem key={sublink.label} asChild>
                   <Link href={sublink.href} onClick={closeMenu}>{sublink.label}</Link>
@@ -175,9 +159,9 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
+      <div className="container flex h-14 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Image src="/lo.png" alt="Sterling & Landis logo" width={140} height={35} />
+          <Image src="/lo.png" alt="Sterling & Landis logo" width={145} height={36} />
         </Link>
 
         <nav className="hidden flex-1 items-center space-x-1 text-sm font-medium md:flex">
@@ -199,7 +183,7 @@ export default function Navbar() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b">
                    <Link href="/" className="flex items-center space-x-2" onClick={() => setMenuOpen(false)}>
-                    <Image src="/lo.png" alt="Sterling & Landis logo" width={140} height={35} />
+                    <Image src="/lo.png" alt="Sterling & Landis logo" width={145} height={36} />
                   </Link>
                   <Button variant="ghost" size="icon" onClick={() => setMenuOpen(false)}>
                     <X className="h-5 w-5" />
