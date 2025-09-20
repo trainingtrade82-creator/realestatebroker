@@ -13,10 +13,14 @@ const propertyTypes: (PropertyType | 'All')[] = ['All', 'Apartment', 'Villa', 'P
 
 export default function FeaturedProperties() {
   const [filter, setFilter] = useState<PropertyType | 'All'>('All');
+  const [showAll, setShowAll] = useState(false);
 
   const filteredProperties = properties.filter(
     (property) => filter === 'All' || property.type === filter
   );
+
+  const propertiesToShow = showAll ? filteredProperties : filteredProperties.slice(0, 3);
+  const mobileProperties = showAll ? filteredProperties : filteredProperties.slice(0,1);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -50,10 +54,10 @@ export default function FeaturedProperties() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProperties.map((property) => {
+          {filteredProperties.map((property, index) => {
             const image = PlaceHolderImages.find(p => p.id === property.image_id);
             return (
-              <Card key={property.id} className="overflow-hidden group">
+              <Card key={property.id} className={`overflow-hidden group ${index > 0 ? 'hidden sm:block' : ''}`}>
                 <CardContent className="p-0">
                   <div className="relative">
                     {image && (
@@ -81,6 +85,13 @@ export default function FeaturedProperties() {
             );
           })}
         </div>
+        {filteredProperties.length > 1 && (
+            <div className="mt-8 text-center sm:hidden">
+                <Button onClick={() => document.querySelectorAll('.sm\\:block').forEach(el => el.classList.remove('hidden'))}>
+                    View More
+                </Button>
+            </div>
+        )}
       </div>
     </section>
   );
