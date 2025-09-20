@@ -90,7 +90,7 @@ function NavMenu({ closeMenu }: { closeMenu?: () => void }) {
                   <ChevronDown className="h-4 w-4" />
                 </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent onMouseLeave={() => setOpenMenu(null)}>
+            <DropdownMenuContent onMouseLeave={() => setOpenMenu(null)} onMouseEnter={() => setOpenMenu(link.label)}>
               {link.submenu.map((sublink) => (
                 <DropdownMenuItem key={sublink.label} asChild>
                   <Link href={sublink.href} onClick={closeMenu}>{sublink.label}</Link>
@@ -159,7 +159,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
+      <div className="container flex h-16 items-center">
         <div className="flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Image src="/lo.png" alt="Sterling & Landis logo" width={160} height={40} />
