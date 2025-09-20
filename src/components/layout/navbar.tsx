@@ -72,6 +72,7 @@ const navLinks = [
   },
   { label: 'About Us', href: '#about' },
   { label: 'Insights / Blog', href: '#' },
+  { label: 'Contact / Consultation', href: '#' },
 
 ];
 
@@ -159,7 +160,6 @@ export default function Navbar() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Image src="/lo.png" alt="Sterling & Landis logo" width={32} height={32} />
-          <span className="font-bold font-headline text-xl">Sterling & Landis</span>
         </Link>
 
         <nav className="hidden flex-1 items-center space-x-1 text-sm font-medium md:flex">
@@ -182,7 +182,6 @@ export default function Navbar() {
                 <div className="flex items-center justify-between p-4 border-b">
                    <Link href="/" className="flex items-center space-x-2" onClick={() => setMenuOpen(false)}>
                     <Image src="/lo.png" alt="Sterling & Landis logo" width={28} height={28} />
-                    <span className="font-bold font-headline text-lg">Sterling & Landis</span>
                   </Link>
                   <Button variant="ghost" size="icon" onClick={() => setMenuOpen(false)}>
                     <X className="h-5 w-5" />
@@ -194,7 +193,7 @@ export default function Navbar() {
                 </div>
                  <div className="mt-auto p-4 border-t grid grid-cols-2 gap-2">
                     <Button variant="ghost" className="w-full">Contact</Button>
-                    <Button className="w-full">VIP Login</Button>
+                    <Button className="w-full">VIP / Members Login</Button>
                  </div>
               </div>
             </SheetContent>
