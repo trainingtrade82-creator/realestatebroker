@@ -6,6 +6,7 @@ import VipInvitation from '@/components/sections/vip-invitation';
 import LifestyleServices from '@/components/sections/lifestyle-services';
 import Footer from '@/components/layout/footer';
 import AiRecommendations from '@/components/sections/ai-recommendations';
+import BuyerJourney from '@/components/sections/buyer-journey';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <ValueProps />
         <FeaturedProperties />
         <LifestyleServices />
+        <BuyerJourney />
         <AiRecommendations />
         <VipInvitation />
       </main>
