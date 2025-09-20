@@ -5,6 +5,7 @@ import FeaturedProperties from '@/components/sections/featured-properties';
 import VipInvitation from '@/components/sections/vip-invitation';
 import LifestyleServices from '@/components/sections/lifestyle-services';
 import Footer from '@/components/layout/footer';
+import AiRecommendations from '@/components/sections/ai-recommendations';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <ValueProps />
         <FeaturedProperties />
+        <AiRecommendations />
         <VipInvitation />
         <LifestyleServices />
       </main>
