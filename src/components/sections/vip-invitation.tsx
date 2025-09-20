@@ -9,7 +9,7 @@ export default function VipInvitation() {
     >
       <div 
         className="absolute inset-0 bg-repeat bg-center opacity-5"
-        style={{ backgroundImage: 'url(/logo.png)', backgroundSize: '100px 100px' }}
+        style={{ backgroundImage: 'url(/lo.png)', backgroundSize: '100px 100px' }}
       ></div>
        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary to-primary/80"></div>
 
