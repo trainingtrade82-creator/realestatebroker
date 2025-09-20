@@ -208,7 +208,7 @@ export default function Navbar() {
 
         <div className="flex flex-1 items-center justify-end space-x-2">
            <Button className="hidden md:inline-flex" variant="ghost">Contact</Button>
-           <Button className="hidden md:inline-flex mr-4">Signup</Button>
+           <Button className="hidden md:inline-flex">Signup</Button>
         </div>
       </div>
     </header>
