@@ -20,8 +20,8 @@ export default function Home() {
         <LifestyleServices />
         <BuyerJourney />
         <Testimonials />
-        <AiRecommendations />
         <VipInvitation />
+        <AiRecommendations />
       </main>
       <Footer />
     </div>
