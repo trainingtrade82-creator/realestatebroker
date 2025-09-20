@@ -1,3 +1,46 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-banner",
+      "description": "A cinematic shot of a luxury villa at dusk.",
+      "imageUrl": "https://picsum.photos/seed/hero/1920/1080",
+      "imageHint": "luxury villa"
+    },
+    {
+      "id": "prop-1",
+      "description": "Interior of a modern apartment with city views.",
+      "imageUrl": "https://picsum.photos/seed/p1/600/400",
+      "imageHint": "modern apartment"
+    },
+    {
+      "id": "prop-2",
+      "description": "A stunning beachfront villa with a pool.",
+      "imageUrl": "https://picsum.photos/seed/p2/600/400",
+      "imageHint": "beachfront house"
+    },
+    {
+      "id": "prop-3",
+      "description": "A luxurious city penthouse with panoramic views at night.",
+      "imageUrl": "https://picsum.photos/seed/p3/600/400",
+      "imageHint": "city penthouse"
+    },
+    {
+      "id": "prop-4",
+      "description": "A sprawling country estate with large gardens.",
+      "imageUrl": "https://picsum.photos/seed/p4/600/400",
+      "imageHint": "country estate"
+    },
+    {
+      "id": "prop-5",
+      "description": "A beautiful family home in a quiet suburban neighborhood.",
+      "imageUrl": "https://picsum.photos/seed/p5/600/400",
+      "imageHint": "suburban home"
+    },
+    {
+      "id": "prop-6",
+      "description": "A cozy and modern mountain cabin in the woods.",
+      "imageUrl": "https://picsum.photos/seed/p6/600/400",
+      "imageHint": "mountain cabin"
+    }
+  ]
 }
