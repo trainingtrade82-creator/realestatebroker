@@ -159,7 +159,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-24 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Image src="/lo.png" alt="Sterling & Landis logo" width={150} height={150} />
+          <Image src="/lo.png" alt="Sterling & Landis logo" width={180} height={40} />
         </Link>
 
         <nav className="hidden flex-1 items-center space-x-1 text-sm font-medium md:flex">
@@ -181,7 +181,7 @@ export default function Navbar() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b">
                    <Link href="/" className="flex items-center space-x-2" onClick={() => setMenuOpen(false)}>
-                    <Image src="/lo.png" alt="Sterling & Landis logo" width={150} height={150} />
+                    <Image src="/lo.png" alt="Sterling & Landis logo" width={180} height={40} />
                   </Link>
                   <Button variant="ghost" size="icon" onClick={() => setMenuOpen(false)}>
                     <X className="h-5 w-5" />
