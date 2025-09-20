@@ -13,9 +13,9 @@ export default function VipInvitation() {
        <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary to-secondary/80"></div>
 
       <div className="container text-center relative z-10 px-4 sm:px-6 lg:px-8">
-        <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Join the Inner Circle</h2>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Join the Exclusive Buyer Network</h2>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          Become a VIP buyer for exclusive access to off-market properties, priority viewings, and a world of luxury perks. Membership is by invitation only.
+          Access properties and perks unavailable anywhere else. Global investors are already reserving top properties — don’t miss out.
         </p>
         <div className="mt-8">
             <Button size="lg">
