@@ -29,7 +29,7 @@ export default function Hero() {
           <Button size="lg" asChild>
             <a href="#properties">Explore Properties</a>
           </Button>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary" asChild>
+          <Button size="lg" variant="secondary" asChild>
              <a href="#vip">Join VIP Buyers</a>
           </Button>
         </div>
