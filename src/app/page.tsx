@@ -15,9 +15,9 @@ export default function Home() {
         <Hero />
         <ValueProps />
         <FeaturedProperties />
+        <LifestyleServices />
         <AiRecommendations />
         <VipInvitation />
-        <LifestyleServices />
       </main>
       <Footer />
     </div>
