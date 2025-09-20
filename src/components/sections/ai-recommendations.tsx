@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Send, Bot, User, Loader2, MessageSquareQuote } from 'lucide-react';
+import { Send, User, Loader2, MessageSquareQuote } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const initialState = {
@@ -55,7 +55,7 @@ export default function AiRecommendations() {
   }, [state, toast]);
 
   return (
-    <section id="contact" className="py-16 sm:py-24 bg-secondary">
+    <section id="contact" className="py-16 sm:py-24 bg-muted">
       <div className="container px-4 sm:px-6 lg:px-8">
         <Card className="max-w-3xl mx-auto">
           <CardHeader className="text-center">

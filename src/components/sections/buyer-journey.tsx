@@ -35,11 +35,11 @@ export default function BuyerJourney() {
             A step-by-step visual flow of your journey with us.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-4 xl:gap-0">
           {journeySteps.map((step, index) => (
             <div
               key={step.title}
-              className="relative flex flex-col items-center text-center lg:px-4"
+              className="relative flex flex-col items-center text-center lg:px-2"
             >
               <Card className="bg-card hover:shadow-lg transition-shadow duration-300 w-full z-10">
                 <CardHeader className="items-center">
@@ -52,8 +52,8 @@ export default function BuyerJourney() {
               </Card>
 
               {index < journeySteps.length - 1 && (
-                <div className="hidden lg:flex absolute top-[calc(50%_-_1px)] left-[calc(50%_+_2rem)] w-full h-0.5 bg-border items-center justify-center">
-                   <ChevronRight className="h-8 w-8 text-muted-foreground bg-secondary px-1" />
+                <div className="hidden lg:flex absolute top-1/2 left-1/2 w-full h-0.5 bg-border items-center justify-end">
+                   <ChevronRight className="h-8 w-8 text-muted-foreground bg-secondary px-1 -translate-y-1/2" />
                 </div>
               )}
             </div>

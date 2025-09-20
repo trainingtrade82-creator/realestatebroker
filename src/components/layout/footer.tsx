@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="container py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           
-          <div className="flex flex-col">
+          <div className="hidden sm:flex flex-col">
              <Image src="/lo.png" alt="Sterling & Landis logo" width={140} height={35} className="mb-4"/>
              <p className="text-sm text-muted-foreground">
                 Where the world buys property — verified, curated, and exclusive.
@@ -77,7 +77,10 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-muted mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Sterling & Landis. All Rights Reserved.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Image src="/lo.png" alt="Sterling & Landis logo" width={120} height={30} className="sm:hidden mb-4 sm:mb-0"/>
+            <p>© {new Date().getFullYear()} Sterling & Landis. All Rights Reserved.</p>
+          </div>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="#" className="hover:text-accent">Privacy Policy</Link>
             <Link href="#" className="hover:text-accent">Terms & Conditions</Link>
