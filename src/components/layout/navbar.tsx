@@ -71,8 +71,6 @@ const navLinks = [
     ],
   },
   { label: 'About Us', href: '#about' },
-  { label: 'Insights / Blog', href: '#' },
-
 ];
 
 function NavMenu({ closeMenu }: { closeMenu?: () => void }) {
@@ -167,7 +165,7 @@ export default function Navbar() {
 
         {/* Mobile Header */}
         <div className="flex w-full items-center justify-between md:hidden">
-          <Link href="/" className="flex items-center space-x-2">
+           <Link href="/" className="flex items-center">
             <Image src="/lo.png" alt="Sterling & Landis logo" width={120} height={30} />
           </Link>
           <Sheet open={isMenuOpen} onOpenChange={setMenuOpen}>
@@ -205,7 +203,7 @@ export default function Navbar() {
           <NavMenu />
         </nav>
 
-        <div className="hidden md:flex flex-1 items-center justify-end space-x-2">
+        <div className="hidden md:flex flex-1 items-center justify-end space-x-2 mr-4">
            <Button variant="ghost">Contact</Button>
            <Button>Signup</Button>
         </div>
