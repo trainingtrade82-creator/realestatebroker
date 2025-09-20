@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Global Estates Access',
+  title: 'Sterling & Landis',
   description: 'Your gateway to the world\'s most exclusive properties.',
 };
 

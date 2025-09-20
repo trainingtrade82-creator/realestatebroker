@@ -8,10 +8,10 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="flex items-center space-x-2">
             <Building className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline text-lg">Global Estates Access</span>
+            <span className="font-bold font-headline text-lg">Sterling & Landis</span>
           </div>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Global Estates Access. All rights reserved.
+            © {new Date().getFullYear()} Sterling & Landis. All rights reserved.
           </p>
           <div className="flex items-center space-x-4">
             <Link href="#" className="text-muted-foreground transition-colors hover:text-accent">
