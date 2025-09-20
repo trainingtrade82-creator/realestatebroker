@@ -72,7 +72,6 @@ const navLinks = [
   },
   { label: 'About Us', href: '#about' },
   { label: 'Insights / Blog', href: '#' },
-  { label: 'Contact / Consultation', href: '#' },
 
 ];
 
