@@ -35,29 +35,32 @@ export default function BuyerJourney() {
             A step-by-step visual flow of your journey with us.
           </p>
         </div>
-        <div className="relative">
-            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-border -translate-y-1/2"></div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {journeySteps.map((step, index) => (
-                <div key={step.title} className="relative flex flex-col items-center text-center">
-                    <Card className="bg-card hover:shadow-lg transition-shadow duration-300 w-full z-10">
-                        <CardHeader className="items-center">
-                            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-background mb-4 border">
-                                {step.icon}
-                            </div>
-                            <CardTitle className="font-headline">{step.title}</CardTitle>
-                            <CardDescription className="pt-2 h-16">{step.description}</CardDescription>
-                        </CardHeader>
-                    </Card>
-                     {index < journeySteps.length - 1 && (
-                        <ChevronRight className="absolute top-1/2 h-8 w-8 text-muted-foreground hidden lg:block -translate-y-1/2 -right-4" />
-                    )}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+          {journeySteps.map((step, index) => (
+            <div
+              key={step.title}
+              className="relative flex flex-col items-center text-center lg:px-4"
+            >
+              <Card className="bg-card hover:shadow-lg transition-shadow duration-300 w-full z-10">
+                <CardHeader className="items-center">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-background mb-4 border">
+                    {step.icon}
+                  </div>
+                  <CardTitle className="font-headline">{step.title}</CardTitle>
+                  <CardDescription className="pt-2 h-16">{step.description}</CardDescription>
+                </CardHeader>
+              </Card>
+
+              {index < journeySteps.length - 1 && (
+                <div className="hidden lg:flex absolute top-[calc(50%_-_1px)] left-[calc(50%_+_2rem)] w-full h-0.5 bg-border items-center justify-center">
+                   <ChevronRight className="h-8 w-8 text-muted-foreground bg-secondary px-1" />
                 </div>
-            ))}
+              )}
             </div>
+          ))}
         </div>
         <div className="mt-12 text-center">
-            <Button size="lg">Start Your Journey Today</Button>
+          <Button size="lg">Start Your Journey Today</Button>
         </div>
       </div>
     </section>
