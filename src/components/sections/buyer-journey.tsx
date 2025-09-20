@@ -40,7 +40,7 @@ export default function BuyerJourney() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {journeySteps.map((step, index) => (
                 <div key={step.title} className="relative flex flex-col items-center text-center">
-                    <Card className="bg-card hover:shadow-lg transition-shadow duration-300 w-full">
+                    <Card className="bg-card hover:shadow-lg transition-shadow duration-300 w-full z-10">
                         <CardHeader className="items-center">
                             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-background mb-4 border">
                                 {step.icon}
@@ -50,7 +50,7 @@ export default function BuyerJourney() {
                         </CardHeader>
                     </Card>
                      {index < journeySteps.length - 1 && (
-                        <ChevronRight className="absolute top-1/2 h-8 w-8 text-muted-foreground hidden lg:block -translate-y-1/2 -right-4" />
+                        <ChevronRight className="absolute top-1/2 h-8 w-8 text-muted-foreground hidden lg:block -translate-y-1/2 -right-8 z-0" />
                     )}
                 </div>
             ))}
