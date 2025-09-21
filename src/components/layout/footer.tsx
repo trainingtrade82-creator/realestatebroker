@@ -77,9 +77,9 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-muted mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <Image src="/lo.png" alt="Sterling & Landis logo" width={120} height={30} className="sm:hidden mb-4 sm:mb-0"/>
+          <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
             <p>© {new Date().getFullYear()} Sterling & Landis. All Rights Reserved.</p>
+            <Image src="/lo.png" alt="Sterling & Landis logo" width={100} height={25} className="sm:hidden mt-4 sm:mt-0"/>
           </div>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="#" className="hover:text-accent">Privacy Policy</Link>
