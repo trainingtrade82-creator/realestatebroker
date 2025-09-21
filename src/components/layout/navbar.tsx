@@ -26,12 +26,7 @@ const navLinks = [
   },
   {
     label: 'Properties',
-    submenu: [
-      { label: 'Residential', href: '#' },
-      { label: 'Commercial', href: '#' },
-      { label: 'Luxury', href: '#' },
-      { label: 'Fractional Investment', href: '#' },
-    ],
+    href: '#properties',
   },
   {
     label: 'Luxury & Lifestyle',
@@ -82,7 +77,7 @@ function NavMenu({ closeMenu }: { closeMenu?: () => void }) {
         link.submenu ? (
           <DropdownMenu key={link.label} open={openMenu === link.label} onOpenChange={(isOpen) => setOpenMenu(isOpen ? link.label : null)}>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-1 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground" onMouseEnter={() => setOpenMenu(link.label)}>
+                <Button variant="ghost" className="flex items-center gap-1 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring focus-visible:ring-offset-0" onMouseEnter={() => setOpenMenu(link.label)}>
                   {link.label}
                   <ChevronDown className="h-4 w-4" />
                 </Button>
@@ -99,7 +94,7 @@ function NavMenu({ closeMenu }: { closeMenu?: () => void }) {
           <Link
             key={link.label}
             href={link.href}
-            className="transition-colors hover:text-accent px-4 py-2"
+            className="transition-colors hover:text-accent px-4 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-ring focus-visible:ring-offset-0"
             onClick={closeMenu}
           >
             {link.label}
@@ -156,18 +151,20 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center px-4 sm:px-6 lg:px-8">
-        <div className="mr-4 hidden md:flex">
+      <div className="container flex h-14 items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/lo.png" alt="Sterling & Landis logo" width={140} height={35} />
+            <Image src="/lo.png" alt="Sterling & Landis logo" width={120} height={30} className="md:w-[140px] md:h-[35px]" />
           </Link>
         </div>
 
-        {/* Mobile Header */}
-        <div className="flex w-full items-center justify-between md:hidden">
-           <Link href="/" className="flex items-center">
-            <Image src="/lo.png" alt="Sterling & Landis logo" width={120} height={30} />
-          </Link>
+        {/* Desktop Nav */}
+        <nav className="hidden flex-1 items-center space-x-1 text-sm font-medium md:flex justify-center">
+          <NavMenu />
+        </nav>
+
+        {/* Mobile Nav Trigger */}
+        <div className="flex items-center md:hidden">
           <Sheet open={isMenuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -199,12 +196,7 @@ export default function Navbar() {
         </div>
 
 
-        <nav className="hidden flex-1 items-center space-x-1 text-sm font-medium md:flex">
-          <NavMenu />
-        </nav>
-
-        <div className="hidden md:flex flex-1 items-center justify-end space-x-2 mr-4">
-           <Button variant="ghost">Contact</Button>
+        <div className="hidden md:flex items-center justify-end space-x-2">
            <Button>Signup</Button>
         </div>
       </div>
