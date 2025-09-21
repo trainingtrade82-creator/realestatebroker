@@ -26,7 +26,7 @@ const navLinks = [
   },
   {
     label: 'Properties',
-    href: '#properties',
+    href: '/properties',
   },
   {
     label: 'Luxury & Lifestyle',
@@ -151,10 +151,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center">
+      <div className="container flex h-14 items-center px-4 sm:px-8 lg:px-12">
+        <div className="flex items-center flex-1 md:flex-none">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/lo.png" alt="Sterling & Landis logo" width={120} height={30} className="md:w-[140px] md:h-[35px]" />
+            <Image src="/lo.png" alt="Sterling & Landis logo" width={100} height={25} className="md:w-[140px] md:h-[35px]" />
           </Link>
         </div>
 
@@ -164,7 +164,7 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Nav Trigger */}
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center md:hidden flex-1 justify-end">
           <Sheet open={isMenuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -187,7 +187,7 @@ export default function Navbar() {
                     <MobileNavMenu closeMenu={() => setMenuOpen(false)} />
                 </div>
                  <div className="mt-auto p-4 border-t grid grid-cols-2 gap-2">
-                    <Button variant="ghost" className="w-full">Contact</Button>
+                    <Button variant="outline" className="w-full">Contact</Button>
                     <Button className="w-full">Signup</Button>
                  </div>
               </div>
@@ -196,7 +196,8 @@ export default function Navbar() {
         </div>
 
 
-        <div className="hidden md:flex items-center justify-end space-x-2">
+        <div className="hidden md:flex items-center justify-end space-x-2 mr-4">
+           <Button variant="outline">Contact</Button>
            <Button>Signup</Button>
         </div>
       </div>
