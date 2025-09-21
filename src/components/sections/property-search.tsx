@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Building, Home, Search, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -22,6 +22,9 @@ export default function PropertySearch() {
   const [mainCategory, setMainCategory] = useState('residential');
   const [subTypes, setSubTypes] = useState(residentialSubTypes);
   const [budget, setBudget] = useState([500000, 10000000]);
+  const [minBudget, setMinBudget] = useState(budget[0].toString());
+  const [maxBudget, setMaxBudget] = useState(budget[1].toString());
+
 
   const handleMainCategoryChange = (value: string) => {
     setMainCategory(value);
@@ -40,6 +43,36 @@ export default function PropertySearch() {
       maximumFractionDigits: 0,
     }).format(value);
   }
+
+  const handleSliderChange = (newBudget: number[]) => {
+    setBudget(newBudget);
+    setMinBudget(newBudget[0].toString());
+    setMaxBudget(newBudget[1].toString());
+  };
+
+  const handleMinInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/[^0-9]/g, '');
+    setMinBudget(value);
+  };
+
+  const handleMaxInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/[^0-9]/g, '');
+    setMaxBudget(value);
+  };
+  
+  const syncInputToSlider = () => {
+    const min = parseInt(minBudget, 10) || 100000;
+    const max = parseInt(maxBudget, 10) || 20000000;
+    const newMin = Math.max(100000, min);
+    const newMax = Math.min(20000000, max);
+    
+    if (newMin > newMax) {
+      setBudget([newMax, newMin]);
+    } else {
+      setBudget([newMin, newMax]);
+    }
+  };
+
 
   return (
     <section className="py-16 sm:py-20 bg-secondary">
@@ -71,7 +104,7 @@ export default function PropertySearch() {
               </Tabs>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 items-end">
                 <Select>
                     <SelectTrigger className="h-12 text-base">
                         <SelectValue placeholder="Select property type" />
@@ -84,17 +117,38 @@ export default function PropertySearch() {
                         ))}
                     </SelectContent>
                 </Select>
-                <div className="space-y-2">
-                    <div className="flex justify-between text-sm font-medium">
-                        <span>Budget:</span>
-                        <span>{formatCurrency(budget[0])} - {formatCurrency(budget[1])}</span>
+                <div className="space-y-3">
+                    <div className="flex justify-between items-center gap-2">
+                         <div className="flex-1">
+                            <label htmlFor="min-budget" className="text-sm font-medium text-muted-foreground">Min Price</label>
+                            <Input
+                                id="min-budget"
+                                type="text"
+                                value={new Intl.NumberFormat('en-US').format(Number(minBudget))}
+                                onChange={handleMinInputChange}
+                                onBlur={syncInputToSlider}
+                                className="h-12 text-base"
+                            />
+                        </div>
+                        <span className="pt-6 text-muted-foreground">-</span>
+                        <div className="flex-1">
+                           <label htmlFor="max-budget" className="text-sm font-medium text-muted-foreground">Max Price</label>
+                           <Input
+                                id="max-budget"
+                                type="text"
+                                value={new Intl.NumberFormat('en-US').format(Number(maxBudget))}
+                                onChange={handleMaxInputChange}
+                                onBlur={syncInputToSlider}
+                                className="h-12 text-base"
+                            />
+                        </div>
                     </div>
                     <Slider
                         min={100000}
                         max={20000000}
                         step={100000}
                         value={budget}
-                        onValueChange={setBudget}
+                        onValueChange={handleSliderChange}
                     />
                 </div>
             </div>
