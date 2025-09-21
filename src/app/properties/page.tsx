@@ -1,7 +1,7 @@
 import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 import PropertySearch from '@/components/sections/property-search';
-import PropertyCategories from '@/components/sections/property-categories';
+import PropertyListings from '@/components/sections/property-listings';
 
 export default function PropertiesPage() {
   return (
@@ -9,8 +9,7 @@ export default function PropertiesPage() {
       <Navbar />
       <main className="flex-grow">
         <PropertySearch />
-        <PropertyCategories />
-        {/* Featured Properties and Listings will go here */}
+        <PropertyListings />
       </main>
       <Footer />
     </div>
