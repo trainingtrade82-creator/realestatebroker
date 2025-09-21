@@ -1,4 +1,4 @@
-import { Building, Home, Land, Warehouse, Store, Briefcase } from 'lucide-react';
+import { Building, Home, Landmark, Warehouse, Store, Briefcase } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 
@@ -6,7 +6,7 @@ const residentialCategories = [
   { name: 'Apartments', icon: <Home className="h-8 w-8 text-accent" />, image: 'https://picsum.photos/seed/cat-apt/400/300', hint: 'modern apartment' },
   { name: 'Villas', icon: <Building className="h-8 w-8 text-accent" />, image: 'https://picsum.photos/seed/cat-villa/400/300', hint: 'luxury villa' },
   { name: 'Penthouses', icon: <Briefcase className="h-8 w-8 text-accent" />, image: 'https://picsum.photos/seed/cat-penth/400/300', hint: 'city penthouse' },
-  { name: 'Residential Plots', icon: <Land className="h-8 w-8 text-accent" />, image: 'https://picsum.photos/seed/cat-res-plot/400/300', hint: 'land plot' },
+  { name: 'Residential Plots', icon: <Landmark className="h-8 w-8 text-accent" />, image: 'https://picsum.photos/seed/cat-res-plot/400/300', hint: 'land plot' },
 ];
 
 const commercialCategories = [
@@ -14,7 +14,7 @@ const commercialCategories = [
   { name: 'Shops / Stores', icon: <Store className="h-8 w-8 text-accent" />, image: 'https://picsum.photos/seed/cat-shop/400/300', hint: 'retail store' },
   { name: 'Showrooms', icon: <Building className="h-8 w-8 text-accent" />, image: 'https://picsum.photos/seed/cat-show/400/300', hint: 'car showroom' },
   { name: 'Warehouses', icon: <Warehouse className="h-8 w-8 text-accent" />, image: 'https://picsum.photos/seed/cat-ware/400/300', hint: 'large warehouse' },
-  { name: 'Commercial Plots', icon: <Land className="h-8 w-8 text-accent" />, image: 'https://picsum.photos/seed/cat-com-plot/400/300', hint: 'commercial land' },
+  { name: 'Commercial Plots', icon: <Landmark className="h-8 w-8 text-accent" />, image: 'https://picsum.photos/seed/cat-com-plot/400/300', hint: 'commercial land' },
 ];
 
 const CategoryTile = ({ name, image, hint }: { name: string, image: string, hint: string }) => (
