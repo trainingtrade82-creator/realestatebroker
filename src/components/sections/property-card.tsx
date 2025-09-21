@@ -12,21 +12,20 @@ import { Button } from '@/components/ui/button';
 export default function PropertyCard({ property }: { property: Property }) {
   const image = PlaceHolderImages.find(p => p.id === property.image_id);
 
-  // Format price for display
-  const formattedPrice = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(property.price);
-  
-  const originalPrice = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  }).format(property.price * 1.1);
+  const price = property.price;
+  const originalPrice = price * 1.1;
 
+  const formatPrice = (p: number, br: 'buy' | 'rent') => {
+      const isRent = br === 'rent';
+      const formatted = new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      }).format(p);
+
+      return isRent ? `${formatted} / month` : formatted;
+  }
 
   return (
     <Card className="group flex h-full flex-col overflow-hidden bg-background shadow-lg transition-shadow duration-300 hover:shadow-2xl">
@@ -68,8 +67,8 @@ export default function PropertyCard({ property }: { property: Property }) {
       </CardContent>
       <CardFooter className="flex items-center justify-between p-4 pt-0">
          <div className="flex flex-col">
-          <span className="text-sm text-muted-foreground line-through">{originalPrice}</span>
-          <span className="text-xl font-bold text-primary">{formattedPrice}</span>
+          <span className="text-sm text-muted-foreground line-through">{formatPrice(originalPrice, property.buyRent)}</span>
+          <span className="text-xl font-bold text-primary">{formatPrice(price, property.buyRent)}</span>
         </div>
         <Link href={`/properties/${property.id}`}>
           <Button>View Details</Button>
