@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -15,8 +16,7 @@ export default function PropertyCard({ property }: { property: Property }) {
   const price = property.price;
   const originalPrice = price * 1.1;
 
-  const formatPrice = (p: number, br: 'buy' | 'rent') => {
-      const isRent = br === 'rent';
+  const formatPrice = (p: number) => {
       const formatted = new Intl.NumberFormat('en-IN', {
         style: 'currency',
         currency: 'INR',
@@ -24,7 +24,7 @@ export default function PropertyCard({ property }: { property: Property }) {
         maximumFractionDigits: 0,
       }).format(p);
 
-      return isRent ? `${formatted} / month` : formatted;
+      return property.buyRent === 'rent' ? `${formatted} / month` : formatted;
   }
 
   return (
@@ -67,8 +67,8 @@ export default function PropertyCard({ property }: { property: Property }) {
       </CardContent>
       <CardFooter className="flex items-center justify-between p-4 pt-0">
          <div className="flex flex-col">
-          <span className="text-sm text-muted-foreground line-through">{formatPrice(originalPrice, property.buyRent)}</span>
-          <span className="text-xl font-bold text-primary">{formatPrice(price, property.buyRent)}</span>
+          <span className="text-sm text-muted-foreground line-through">{formatPrice(originalPrice)}</span>
+          <span className="text-xl font-bold text-primary">{formatPrice(price)}</span>
         </div>
         <Link href={`/properties/${property.id}`}>
           <Button>View Details</Button>
