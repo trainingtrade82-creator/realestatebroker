@@ -151,10 +151,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center px-4 sm:px-8 lg:px-12">
-        <div className="flex items-center flex-1 md:flex-none">
+      <div className="container flex h-14 items-center">
+        <div className="mr-auto flex items-center md:flex-none">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/lo.png" alt="Sterling & Landis logo" width={100} height={25} className="md:w-[140px] md:h-[35px]" />
+            <Image src="/lo.png" alt="Sterling & Landis logo" width={140} height={35} className="w-[100px] h-auto md:w-[140px]" />
           </Link>
         </div>
 
@@ -164,7 +164,7 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Nav Trigger */}
-        <div className="flex items-center md:hidden flex-1 justify-end">
+        <div className="flex items-center md:hidden ml-auto">
           <Sheet open={isMenuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -196,7 +196,7 @@ export default function Navbar() {
         </div>
 
 
-        <div className="hidden md:flex items-center justify-end space-x-2 mr-4">
+        <div className="hidden md:flex items-center justify-end space-x-2 ml-auto">
            <Button variant="outline">Contact</Button>
            <Button>Signup</Button>
         </div>
